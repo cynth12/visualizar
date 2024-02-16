@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evolución de la Pobreza en Ciudades</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Ciudad de México', 'Guadalajara', 'Monterrey', 'Puebla', 'Mérida'],
+          ['2008', 25, 30, 20, 35, 22],
+          ['2010', 24, 29, 19, 34, 21],
+          ['2012', 23, 28, 18, 33, 20],
+          ['2014', 22, 27, 17, 32, 19],
+          ['2016', 21, 26, 16, 31, 18],
+          ['2018', 20, 25, 15, 30, 17]
+        ]);
+
+        var options = {
+          title: 'Evolución de la Pobreza por Ciudad (2008 - 2018)',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+    <h2>Gráfico de la Evolución de la Pobreza en Ciudades Mexicanas</h2>
+    <div id="curve_chart" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
