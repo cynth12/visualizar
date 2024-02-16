@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pobreza y Pertenencia Étnica (2008 - 2018)</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Año', 'Pobreza (%)', 'Indígena (%)', 'No Indígena (%)'],
+          ['2008', 27.4, 60, 20],
+          ['2010', 21.2, 58, 19],
+          ['2012', 16.8, 55, 18],
+          ['2014', 31.1, 53, 17],
+          ['2016', 19.9, 50, 16],
+          ['2018', 22.7, 48, 15]
+        ]);
+
+        var options = {
+          title: 'Pobreza y Pertenencia Étnica (2008 - 2018)',
+          hAxis: {title: 'Año',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+          chartArea: {width: '60%', height: '70%'},
+          isStacked: true // Opcional: Para un gráfico de áreas apiladas
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('area_chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+    <h2>Visualización de Pobreza y Pertenencia Étnica</h2>
+    <div id="area_chart_div" style="width: 900px; height: 500px;"></div>
+</body>
+</html>
